@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+{% extends 'genre/base.html' %}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detail Piece</title>
+</head>
+<body>
+{% block content %}
+    {% for elem in collection.piece_set.all %}
+    <div align="center">
+        <img src="{{elem.piececover}}" height="200" width="200">
+        <h2>{{elem.title}} - {{elem.artist}}</h2>
+        <h3>{{elem.year}}</h3>
+        <h3>{{elem.typ}}</h3>
+    </div>
+    {% endfor %}
+    {% endblock %}
+</body>
+</html>
